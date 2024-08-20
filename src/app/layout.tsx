@@ -9,11 +9,11 @@ export const metadata: Metadata = {
   description: "Online shopping marketplace",
   icons: [
     { rel: "icon", type: "image/png", sizes: "48x48", url: "/favicon.ico" }
-  ],
+  ]
 };
 
 export default function RootLayout({
-  children,
+  children
 }: Readonly<{
   children: React.ReactNode;
 }>) {
