@@ -14,16 +14,24 @@ export default function Header() {
       <div className="mx-auto flex w-full max-w-[1920px] items-center justify-between gap-4">
         <Logo className="z-50" />
         <nav
-          className={`fixed left-0 top-0 z-40 flex h-full w-full flex-col items-center justify-center bg-white transition-all duration-300 lg:static lg:flex-[1_1_auto] lg:flex-row lg:justify-between dark:bg-gray-500 ${isMenuOpen ? "pointer-events-auto visible left-0" : "pointer-events-none invisible left-[100%] lg:pointer-events-auto lg:visible lg:left-0"}`}
+          className={`fixed top-0 z-40 flex h-full w-full flex-col items-center justify-center bg-white transition-all duration-300 dark:bg-gray-500 lg:static lg:flex-[1_1_auto] lg:flex-row lg:justify-between lg:transition-none ${isMenuOpen ? "pointer-events-auto visible left-0" : "pointer-events-none invisible left-[100%] lg:pointer-events-auto lg:visible"}`}
         >
-          <ul className="flex flex-col items-center gap-5 rounded-md border border-gray-300 bg-white px-10 py-5 lg:mx-auto lg:flex-row lg:gap-10 lg:rounded-full lg:py-2 dark:bg-gray-500">
+          <ul className="flex flex-col items-center gap-5 rounded-md border border-gray-300 bg-white px-10 py-5 dark:bg-gray-500 lg:mx-auto lg:flex-row lg:gap-10 lg:rounded-full lg:py-2">
             <li>
-              <Link href="/" className="text-gray-400 dark:text-white">
+              <Link
+                href="/"
+                className="text-gray-400 dark:text-white"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Home
               </Link>
             </li>
             <li>
-              <Link href="/products" className="text-gray-400 dark:text-white">
+              <Link
+                href="/products"
+                className="text-gray-400 dark:text-white"
+                onClick={() => setIsMenuOpen(false)}
+              >
                 Products
               </Link>
             </li>
@@ -33,7 +41,7 @@ export default function Header() {
         <div className="flex gap-4">
           <SwitchThemeButton className="z-50" />
           <button
-            className="z-50 rounded-md border border-gray-300 p-2 text-gray-400 lg:hidden dark:bg-gray-500 dark:text-white"
+            className="z-50 rounded-md border border-gray-300 p-2 text-gray-400 dark:bg-gray-500 dark:text-white lg:hidden"
             onClick={() => setIsMenuOpen(prev => !prev)}
           >
             <CgMenuLeftAlt size={18} />
