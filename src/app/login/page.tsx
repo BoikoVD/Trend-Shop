@@ -1,3 +1,5 @@
+import { LoginPage } from "@/features/auth";
+
 export default function Login() {
-  return <main>Login page</main>;
+  return <LoginPage />;
 }
