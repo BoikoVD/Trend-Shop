@@ -18,20 +18,12 @@ export default function Header() {
         >
           <ul className="flex flex-col items-center gap-5 rounded-md border border-gray-300 bg-white px-10 py-5 dark:bg-gray-500 lg:mx-auto lg:flex-row lg:gap-10 lg:rounded-full lg:py-2">
             <li>
-              <Link
-                href="/"
-                className="text-gray-400 dark:text-white"
-                onClick={() => setIsMenuOpen(false)}
-              >
+              <Link href="/" onClick={() => setIsMenuOpen(false)}>
                 Home
               </Link>
             </li>
             <li>
-              <Link
-                href="/products"
-                className="text-gray-400 dark:text-white"
-                onClick={() => setIsMenuOpen(false)}
-              >
+              <Link href="/products" onClick={() => setIsMenuOpen(false)}>
                 Products
               </Link>
             </li>
@@ -41,7 +33,7 @@ export default function Header() {
         <div className="flex gap-4">
           <SwitchThemeButton className="z-50" />
           <button
-            className="z-50 rounded-md border border-gray-300 p-2 text-gray-400 dark:bg-gray-500 dark:text-white lg:hidden"
+            className="z-50 rounded-md border border-gray-300 p-2 dark:bg-gray-500 lg:hidden"
             onClick={() => setIsMenuOpen(prev => !prev)}
           >
             <CgMenuLeftAlt size={18} />

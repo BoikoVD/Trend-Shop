@@ -14,7 +14,7 @@ export default function LinkButton(props: ILinkButton) {
   return (
     <Link
       href={to}
-      className={`flex items-center justify-center gap-2 rounded-md border border-gray-200 bg-white p-1 text-gray-400 dark:bg-gray-400 dark:text-white ${className}`}
+      className={`flex items-center justify-center gap-2 rounded-md border border-gray-200 bg-white p-1 dark:bg-gray-400 ${className}`}
     >
       {Icon && <Icon size={16} />}
       {children}

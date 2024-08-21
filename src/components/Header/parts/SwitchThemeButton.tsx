@@ -39,7 +39,7 @@ export default function SwitchThemeButton({
 
   return (
     <button
-      className={`rounded-md border border-gray-300 p-2 text-gray-400 dark:bg-gray-500 dark:text-white ${className}`}
+      className={`rounded-md border border-gray-300 p-2 dark:bg-gray-500 ${className}`}
       onClick={() => {
         setDarkTheme(prev => !prev);
       }}
