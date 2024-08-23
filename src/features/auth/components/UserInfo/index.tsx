@@ -1,11 +1,12 @@
 "use client";
-import { useUser } from "../../hooks/useUser";
-import Link from "next/link";
-import { routes } from "@/constants/routes";
-import Button from "@/components/UI/Button/Button";
 import { Dispatch, SetStateAction, useState } from "react";
-import { useOutsideClick } from "@/hooks/useOutsideClick";
+import Link from "next/link";
 import Image from "next/image";
+import Button from "@/components/UI/Button/Button";
+import { useOutsideClick } from "@/hooks/useOutsideClick";
+import { routes } from "@/constants/routes";
+import { useUser } from "../../hooks/useUser";
+import { useLogout } from "../../hooks/useLogout";
 
 export function UserInfo({
   className,
@@ -16,6 +17,7 @@ export function UserInfo({
 }) {
   const [isUserMenuOpen, setIsUserMenuOpen] = useState(false);
   const { user } = useUser();
+  const logout = useLogout();
   const ref = useOutsideClick(() => {
     setIsUserMenuOpen(false);
   });
@@ -58,7 +60,7 @@ export function UserInfo({
         >
           Profile
         </Link>
-        <Button size="small" color="dark" className="mt-4">
+        <Button size="small" color="dark" className="mt-4" onClick={logout}>
           Logout
         </Button>
       </div>
