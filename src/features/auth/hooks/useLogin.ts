@@ -15,7 +15,7 @@ export function useLogin(): IUseLogin {
   const queryClient = useQueryClient();
   const router = useRouter();
 
-  const { mutate: signInMutation } = useMutation<
+  const { mutate: loginMutation } = useMutation<
     Profile,
     unknown,
     LoginData,
@@ -31,5 +31,5 @@ export function useLogin(): IUseLogin {
     }
   });
 
-  return signInMutation;
+  return loginMutation;
 }

@@ -3,6 +3,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import isEmail from "validator/lib/isEmail";
 import Input from "@/components/UI/Input/Input";
 import Button from "@/components/UI/Button/Button";
+import { useSignUp } from "../../../hooks/useSignUp";
 
 type Inputs = {
   name: string;
@@ -19,8 +20,11 @@ export default function LoginForm() {
     formState: { errors }
   } = useForm<Inputs>();
 
+  const signUp = useSignUp();
+
   const onSubmit: SubmitHandler<Inputs> = data => {
     console.log(data);
+    signUp(data);
   };
 
   return (
