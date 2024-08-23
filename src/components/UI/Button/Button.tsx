@@ -6,6 +6,7 @@ interface ILinkButton {
   onClick?: MouseEventHandler<HTMLButtonElement>;
   type?: "submit" | "reset" | "button";
   color?: "primary" | "dark";
+  size?: "small" | "medium";
   icon?: IconType;
   disabled?: boolean;
   className?: string;
@@ -14,7 +15,11 @@ interface ILinkButton {
 const styles = {
   // color
   primary: "bg-purple-400",
-  dark: "bg-gray-200"
+  dark: "bg-gray-200",
+
+  // size
+  small: "px-3 py-1 text-base",
+  medium: "px-3 py-2 text-xl"
 };
 
 export default function Button(props: ILinkButton) {
@@ -23,6 +28,7 @@ export default function Button(props: ILinkButton) {
     onClick,
     type = "button",
     color = "primary",
+    size = "medium",
     icon: Icon,
     disabled = false,
     className
@@ -33,7 +39,7 @@ export default function Button(props: ILinkButton) {
       onClick={onClick}
       disabled={disabled}
       type={type}
-      className={`min-w-[150px] rounded-xl px-3 py-2 text-xl text-white sm:min-w-[280px] ${styles[color]} ${className}`}
+      className={`rounded-xl text-white ${styles[size]} ${styles[color]} ${className}`}
     >
       {Icon && <Icon size={16} />}
       {children}
