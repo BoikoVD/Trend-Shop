@@ -3,6 +3,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import isEmail from "validator/lib/isEmail";
 import Input from "@/components/UI/Input/Input";
 import Button from "@/components/UI/Button/Button";
+import { useLogin } from "@/features/auth";
 
 type Inputs = {
   email: string;
@@ -16,7 +17,12 @@ export default function LoginForm() {
     formState: { errors }
   } = useForm<Inputs>();
 
-  const onSubmit: SubmitHandler<Inputs> = data => console.log(data);
+  const login = useLogin();
+
+  const onSubmit: SubmitHandler<Inputs> = data => {
+    console.log(data);
+    login(data);
+  };
 
   return (
     <form
@@ -57,7 +63,9 @@ export default function LoginForm() {
         })}
         error={errors.password?.message}
       />
-      <Button type="submit">Login</Button>
+      <Button type="submit" className="min-w-[150px] sm:min-w-[280px]">
+        Login
+      </Button>
     </form>
   );
 }
