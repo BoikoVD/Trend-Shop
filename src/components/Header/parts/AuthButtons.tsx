@@ -9,7 +9,7 @@ export default function AuthButtons({ className }: { className?: string }) {
       <LinkButton to={routes.LOGIN} icon={AiOutlineLogin}>
         Login
       </LinkButton>
-      <LinkButton to={routes.LOGIN} icon={AiOutlineUserAdd}>
+      <LinkButton to={routes.SIGN_UP} icon={AiOutlineUserAdd}>
         Sign Up
       </LinkButton>
     </div>
