@@ -3,7 +3,7 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import isEmail from "validator/lib/isEmail";
 import Input from "@/components/UI/Input/Input";
 import Button from "@/components/UI/Button/Button";
-import { useLogin } from "@/features/auth";
+import { useLogin } from "../../../hooks/useLogin";
 
 type Inputs = {
   email: string;
