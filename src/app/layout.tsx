@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
+import ReactQueryProvider from "./_providers/ReactQueryProvider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
@@ -28,9 +29,11 @@ export default function RootLayout({
       <body
         className={`${inter.className} text-gray-400 dark:bg-gray-500 dark:text-white`}
       >
-        <Header />
-        {children}
-        <Footer />
+        <ReactQueryProvider>
+          <Header />
+          {children}
+          <Footer />
+        </ReactQueryProvider>
       </body>
     </html>
   );
