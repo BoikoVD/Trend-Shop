@@ -14,7 +14,7 @@ export default function Header() {
   const { user } = useUser();
 
   return (
-    <header className="sticky left-0 right-0 top-0 z-30 w-full border-b border-gray-300 px-5 py-3 dark:bg-gray-500">
+    <header className="fixed left-0 right-0 top-0 z-30 w-full border-b border-gray-300 bg-white px-5 py-3 dark:bg-gray-500">
       <div className="mx-auto flex w-full max-w-[1920px] items-center justify-between gap-4">
         <Logo className="z-50" />
         <nav
@@ -32,11 +32,13 @@ export default function Header() {
               </Link>
             </li>
           </ul>
-          {user ? (
-            <UserInfo setIsMenuOpen={setIsMenuOpen} />
-          ) : (
-            <AuthButtons className="mt-8 lg:mt-0" />
-          )}
+          <div className="lg:flex lg:min-w-[200px] lg:justify-end">
+            {user ? (
+              <UserInfo setIsMenuOpen={setIsMenuOpen} />
+            ) : (
+              <AuthButtons className="mt-8 lg:mt-0" />
+            )}
+          </div>
         </nav>
         <div className="flex gap-4">
           <SwitchThemeButton className="z-50" />

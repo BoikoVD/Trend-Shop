@@ -1,3 +1,3 @@
 export default function Products() {
-  return <main>Products page</main>;
+  return <main className="container">Products page</main>;
 }

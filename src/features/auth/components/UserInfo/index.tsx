@@ -28,7 +28,7 @@ export function UserInfo({
 
   return (
     <div
-      className={`relative mt-6 flex flex-col items-center gap-6 rounded-md border border-gray-300 px-10 py-6 dark:bg-gray-500 lg:mt-0 lg:p-0 ${className}`}
+      className={`relative mt-6 flex flex-col items-center gap-6 rounded-xl border border-gray-300 px-10 py-6 dark:bg-gray-500 lg:mt-0 lg:p-0 ${className}`}
     >
       <div
         className="flex items-center gap-3 lg:p-2"
