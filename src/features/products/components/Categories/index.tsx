@@ -7,16 +7,20 @@ interface IProps {
   selectedCategory: number;
   categories: ICategories;
   setCategory: Dispatch<SetStateAction<number>>;
+  className?: string;
 }
 
 export function Categories({
   selectedCategory,
   categories,
-  setCategory
+  setCategory,
+  className
 }: IProps) {
   return (
-    <div className="max-w-[250px] rounded-xl border border-gray-300 bg-white py-4 dark:bg-gray-500">
-      <div className="flex items-center gap-2 pl-2">
+    <div
+      className={`rounded-xl border border-gray-300 bg-white py-4 dark:bg-gray-500 md:max-w-[280px] ${className}`}
+    >
+      <div className="flex items-center gap-2 pl-2 pr-10">
         <BiCategory size={24} className="text-purple-400" />
         <p className="text-xl">Categories:</p>
       </div>

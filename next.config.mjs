@@ -7,6 +7,12 @@ const nextConfig = {
         hostname: "picsum.photos",
         port: "",
         pathname: "/**"
+      },
+      {
+        protocol: "https",
+        hostname: "i.imgur.com",
+        port: "",
+        pathname: "/**"
       }
     ]
   }
