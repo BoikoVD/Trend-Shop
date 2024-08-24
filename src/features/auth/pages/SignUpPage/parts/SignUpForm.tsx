@@ -23,7 +23,6 @@ export default function LoginForm() {
   const signUp = useSignUp();
 
   const onSubmit: SubmitHandler<Inputs> = data => {
-    console.log(data);
     signUp(data);
   };
 

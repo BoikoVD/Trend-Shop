@@ -20,7 +20,6 @@ export default function LoginForm() {
   const login = useLogin();
 
   const onSubmit: SubmitHandler<Inputs> = data => {
-    console.log(data);
     login(data);
   };
 
