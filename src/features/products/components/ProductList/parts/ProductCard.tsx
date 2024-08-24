@@ -1,5 +1,8 @@
+import { MouseEvent } from "react";
+import Link from "next/link";
 import Image from "next/image";
 import Button from "@/components/UI/Button/Button";
+import { routes } from "@/constants/routes";
 import { Product } from "../../../schemas/schemas";
 
 interface IProps {
@@ -16,16 +19,25 @@ export function ProductCard({ productData }: IProps) {
     return null;
   }
 
+  const addToCardHandler = (e: MouseEvent) => {
+    console.log("Add item to card");
+  };
+
   return (
     <div className="flex h-full flex-col rounded-xl border border-gray-300 bg-white p-6 dark:bg-gray-500">
-      <Image
-        src={imageUrl}
-        alt={`${productData.title} image`}
-        width={400}
-        height={400}
-        priority
-        className="h-[280px] self-center rounded-xl object-cover"
-      />
+      <Link
+        href={`${routes.PRODUCT}/${productData.id}`}
+        className="self-center"
+      >
+        <Image
+          src={imageUrl}
+          alt={`${productData.title} image`}
+          width={400}
+          height={400}
+          priority
+          className="h-[280px] rounded-xl object-cover"
+        />
+      </Link>
       <div className="flex-[1_1_auto]">
         <h4 className="mt-6 text-xl">{productData.title}</h4>
         <p className="mt-4 line-clamp-2 text-sm text-gray-50">
@@ -42,7 +54,9 @@ export function ProductCard({ productData }: IProps) {
           <p className="text-xs text-gray-50">Price:</p>
           <p className="text-2xl">{`$ ${productData.price}`}</p>
         </div>
-        <Button size="small">Add To Cart</Button>
+        <Button size="small" onClick={addToCardHandler}>
+          Add To Cart
+        </Button>
       </div>
     </div>
   );

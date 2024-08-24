@@ -1,7 +1,7 @@
 "use client";
 import { Dispatch, SetStateAction, useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
-import { useDebounce } from "@/features/products/hooks/useDebounce";
+import { useDebounce } from "@/hooks/useDebounce";
 
 interface IProps {
   setSearchQuery: Dispatch<SetStateAction<string>>;

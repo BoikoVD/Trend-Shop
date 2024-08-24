@@ -1,8 +1,10 @@
 import axios from "axios";
 import {
   Categories,
+  Product,
   Products,
   schemaCategories,
+  schemaProduct,
   schemaProducts
 } from "../schemas/schemas";
 
@@ -40,5 +42,17 @@ export async function getProducts({
     return result;
   } else {
     throw new Error("[Get Products api]: No products data!");
+  }
+}
+
+export async function getProduct({ id }: { id: string }): Promise<Product> {
+  const response = await axios.get(
+    `${process.env.NEXT_PUBLIC_API_URL}/products/${id}`
+  );
+  if (response.data) {
+    const result = schemaProduct.parse(response.data);
+    return result;
+  } else {
+    throw new Error("[Get Product api]: No product data!");
   }
 }
