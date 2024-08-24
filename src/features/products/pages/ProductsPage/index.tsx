@@ -11,7 +11,7 @@ export function ProductsPage() {
   const [offset, setOffset] = useState<number>(0);
   const [limit, setLimit] = useState<number>(12);
   const { categories } = useCategories();
-  const { products } = useProducts({
+  const { products, isLoading } = useProducts({
     categoryId: selectedCategory,
     offset: offset,
     limit: limit
@@ -24,14 +24,20 @@ export function ProductsPage() {
   return (
     <main className="container flex flex-col gap-6 md:flex-row md:items-start">
       <div className="order-2 flex flex-[1_1_auto] flex-col items-center md:order-1">
-        <ProductList products={products} />
-        {products.length !== 0 && (
-          <Pagination
-            offset={offset}
-            limit={limit}
-            productsLength={products.length}
-            setOffset={setOffset}
-          />
+        {isLoading ? (
+          <p className="mt-10 w-full text-center">Loading...</p>
+        ) : products.length === 0 ? (
+          <p className="mt-10 w-full text-center">No products!</p>
+        ) : (
+          <>
+            <ProductList products={products} />
+            <Pagination
+              offset={offset}
+              limit={limit}
+              productsLength={products.length}
+              setOffset={setOffset}
+            />
+          </>
         )}
       </div>
       <Categories

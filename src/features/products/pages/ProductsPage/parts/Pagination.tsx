@@ -8,13 +8,15 @@ interface IProps {
   limit: number;
   productsLength: number;
   setOffset: Dispatch<SetStateAction<number>>;
+  disable?: boolean;
 }
 
 export function Pagination({
   offset,
   limit,
   productsLength,
-  setOffset
+  setOffset,
+  disable = false
 }: IProps) {
   return (
     <div className="mt-6 flex gap-10 sm:mt-10">
@@ -22,7 +24,7 @@ export function Pagination({
         color="dark"
         leftIcon={AiOutlineArrowLeft}
         iconSize={20}
-        disabled={offset === 0}
+        disabled={offset === 0 || disable}
         onClick={() => setOffset(offset - limit)}
         className="disabled:opacity-[0.5]"
       >
@@ -32,7 +34,7 @@ export function Pagination({
         color="dark"
         rightIcon={AiOutlineArrowRight}
         iconSize={20}
-        disabled={productsLength !== limit}
+        disabled={productsLength !== limit || disable}
         onClick={() => setOffset(offset + limit)}
         className="disabled:opacity-[0.5]"
       >

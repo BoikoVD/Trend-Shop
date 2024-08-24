@@ -6,6 +6,8 @@ import { Products } from "../schemas/schemas";
 
 interface IProducts {
   products: Products;
+  isLoading: boolean;
+  isPlaceholderData: boolean;
 }
 
 export function useProducts({
@@ -17,7 +19,11 @@ export function useProducts({
   offset: number;
   limit: number;
 }): IProducts {
-  const { data: products } = useQuery({
+  const {
+    data: products,
+    isLoading,
+    isPlaceholderData
+  } = useQuery({
     queryKey: [
       `${QUERY_KEYS.products}`,
       `category=${categoryId}`,
@@ -28,5 +34,5 @@ export function useProducts({
     placeholderData: keepPreviousData
   });
 
-  return { products: products ?? [] };
+  return { products: products ?? [], isLoading, isPlaceholderData };
 }
