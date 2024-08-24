@@ -9,7 +9,7 @@ interface IProps {
 export function ProductList({ products, className }: IProps) {
   return (
     <ul
-      className={`grid flex-[1_1_auto] grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 ${className}`}
+      className={`grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3 ${className}`}
     >
       {products.map(product => (
         <li className="h-full" key={product.id}>

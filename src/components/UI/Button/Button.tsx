@@ -7,7 +7,9 @@ interface ILinkButton {
   type?: "submit" | "reset" | "button";
   color?: "primary" | "dark";
   size?: "small" | "medium";
-  icon?: IconType;
+  leftIcon?: IconType;
+  rightIcon?: IconType;
+  iconSize?: number;
   disabled?: boolean;
   className?: string;
 }
@@ -29,7 +31,9 @@ export default function Button(props: ILinkButton) {
     type = "button",
     color = "primary",
     size = "medium",
-    icon: Icon,
+    leftIcon: LeftIcon,
+    rightIcon: RightIcon,
+    iconSize = 16,
     disabled = false,
     className
   } = props;
@@ -39,10 +43,11 @@ export default function Button(props: ILinkButton) {
       onClick={onClick}
       disabled={disabled}
       type={type}
-      className={`rounded-xl text-white ${styles[size]} ${styles[color]} ${className}`}
+      className={`flex items-center gap-4 rounded-xl text-white ${styles[size]} ${styles[color]} ${className}`}
     >
-      {Icon && <Icon size={16} />}
+      {LeftIcon && <LeftIcon size={iconSize} />}
       {children}
+      {RightIcon && <RightIcon size={iconSize} />}
     </button>
   );
 }
