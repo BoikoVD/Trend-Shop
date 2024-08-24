@@ -21,16 +21,19 @@ export async function getCategories(): Promise<Categories> {
 export async function getProducts({
   categoryId,
   offset,
-  limit
+  limit,
+  searchQuery
 }: {
   categoryId: number;
   offset: number;
   limit: number;
+  searchQuery: string;
 }): Promise<Products> {
-  const url =
-    categoryId === 0
-      ? `${process.env.NEXT_PUBLIC_API_URL}/products?offset=${offset}&limit=${limit}`
-      : `${process.env.NEXT_PUBLIC_API_URL}/products?categoryId=${categoryId}&offset=${offset}&limit=${limit}`;
+  let url = `${process.env.NEXT_PUBLIC_API_URL}/products?` ?? "";
+  if (categoryId !== 0) url = url + `categoryId=${categoryId}&`;
+  if (searchQuery) url = url + `title=${searchQuery}&`;
+  url = url + `offset=${offset}&limit=${limit}`;
+
   const response = await axios.get(url);
   if (response.data) {
     const result = schemaProducts.parse(response.data);

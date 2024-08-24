@@ -5,16 +5,19 @@ import { useProducts } from "../../hooks/useProducts";
 import { Categories } from "../../components/Categories";
 import { ProductList } from "../../components/ProductList";
 import { Pagination } from "./parts/Pagination";
+import { Search } from "./parts/Search";
 
 export function ProductsPage() {
   const [selectedCategory, setSelectedCategory] = useState<number>(0);
   const [offset, setOffset] = useState<number>(0);
   const [limit, setLimit] = useState<number>(12);
+  const [searchQuery, setSearchQuery] = useState<string>("");
   const { categories } = useCategories();
   const { products, isLoading } = useProducts({
     categoryId: selectedCategory,
     offset: offset,
-    limit: limit
+    limit: limit,
+    searchQuery: searchQuery
   });
 
   useEffect(() => {
@@ -24,6 +27,7 @@ export function ProductsPage() {
   return (
     <main className="container flex flex-col gap-6 md:flex-row md:items-start">
       <div className="order-2 flex flex-[1_1_auto] flex-col items-center md:order-1">
+        <Search setSearchQuery={setSearchQuery} className="mb-6" />
         {isLoading ? (
           <p className="mt-10 w-full text-center">Loading...</p>
         ) : products.length === 0 ? (

@@ -11,13 +11,15 @@ interface IProducts {
 }
 
 export function useProducts({
-  categoryId,
+  categoryId = 0,
   offset,
-  limit
+  limit,
+  searchQuery = ""
 }: {
-  categoryId: number;
+  categoryId?: number;
   offset: number;
   limit: number;
+  searchQuery?: string;
 }): IProducts {
   const {
     data: products,
@@ -27,10 +29,11 @@ export function useProducts({
     queryKey: [
       `${QUERY_KEYS.products}`,
       `category=${categoryId}`,
+      `searchQuery=${searchQuery}`,
       `offset=${offset}`,
       `limit=${limit}`
     ],
-    queryFn: () => getProducts({ categoryId, offset, limit }),
+    queryFn: () => getProducts({ categoryId, offset, limit, searchQuery }),
     placeholderData: keepPreviousData
   });
 
