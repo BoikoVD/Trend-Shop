@@ -1,5 +1,5 @@
 "use client";
-import { useQuery } from "@tanstack/react-query";
+import { useQuery, keepPreviousData } from "@tanstack/react-query";
 import { QUERY_KEYS } from "../utils/constants";
 import { getProducts } from "../api/api";
 import { Products } from "../schemas/schemas";
@@ -19,11 +19,14 @@ export function useProducts({
 }): IProducts {
   const { data: products } = useQuery({
     queryKey: [
-      `${QUERY_KEYS.products}/category=${categoryId}/offset=${offset}/limit=${limit}`
+      `${QUERY_KEYS.products}`,
+      `category=${categoryId}`,
+      `offset=${offset}`,
+      `limit=${limit}`
     ],
     queryFn: () => getProducts({ categoryId, offset, limit }),
-    initialData: []
+    placeholderData: keepPreviousData
   });
 
-  return { products: products };
+  return { products: products ?? [] };
 }

@@ -23,6 +23,7 @@ export function ProductCard({ productData }: IProps) {
         alt={`${productData.title} image`}
         width={400}
         height={400}
+        priority
         className="h-[280px] self-center rounded-xl object-cover"
       />
       <div className="flex-[1_1_auto]">
