@@ -3,6 +3,17 @@
 @tailwind utilities;
 
 @layer components {
+  .customScrollBar::-webkit-scrollbar-track {
+    @apply bg-gray-50 dark:bg-gray-400;
+  }
+
+  .customScrollBar::-webkit-scrollbar {
+    @apply w-[8px] bg-gray-200;
+  }
+
+  .customScrollBar::-webkit-scrollbar-thumb {
+    @apply border border-purple-400 bg-purple-400;
+  }
   .container {
     @apply mx-auto max-w-[1480px] px-4 pb-10 pt-24 md:px-10;
   }
