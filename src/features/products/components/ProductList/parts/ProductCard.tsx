@@ -7,10 +7,19 @@ interface IProps {
 }
 
 export function ProductCard({ productData }: IProps) {
+  // The Platzi API is an open source API and the data can be updated by any developer, so we need to make sure that the image URL is in the correct format
+  const imageUrl = productData.images[0].substring(
+    productData.images[0].indexOf("http"),
+    productData.images[0].lastIndexOf("jpeg") + 4
+  );
+  if (!imageUrl.includes("i.imgur.com")) {
+    return null;
+  }
+
   return (
     <div className="flex h-full flex-col rounded-xl border border-gray-300 bg-white p-6 dark:bg-gray-500">
       <Image
-        src={productData.images[0]}
+        src={imageUrl}
         alt={`${productData.title} image`}
         width={400}
         height={400}
