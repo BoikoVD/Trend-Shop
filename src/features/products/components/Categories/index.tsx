@@ -1,0 +1,49 @@
+import { Dispatch, SetStateAction } from "react";
+import { BiCategory } from "react-icons/bi";
+import { Categories as ICategories } from "../../schemas/schemas";
+import { CategoryItem } from "./parts/CategoryItem";
+
+interface IProps {
+  selectedCategory: number;
+  categories: ICategories;
+  setCategory: Dispatch<SetStateAction<number>>;
+}
+
+export function Categories({
+  selectedCategory,
+  categories,
+  setCategory
+}: IProps) {
+  return (
+    <div className="max-w-[250px] rounded-xl border border-gray-300 bg-white py-4 dark:bg-gray-500">
+      <div className="flex items-center gap-2 pl-2">
+        <BiCategory size={24} className="text-purple-400" />
+        <p className="text-xl">Categories:</p>
+      </div>
+      <ul className="mt-3 flex flex-col gap-2">
+        <li>
+          <CategoryItem
+            selectedCategory={selectedCategory}
+            setCategory={setCategory}
+            categoryData={{
+              id: 0,
+              name: "All",
+              image: "",
+              creationAt: "",
+              updatedAt: ""
+            }}
+          />
+        </li>
+        {categories.map(category => (
+          <li key={category.id}>
+            <CategoryItem
+              selectedCategory={selectedCategory}
+              categoryData={category}
+              setCategory={setCategory}
+            />
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}

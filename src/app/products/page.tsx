@@ -1,3 +1,5 @@
+import { ProductsPage } from "@/features/products";
+
 export default function Products() {
-  return <main className="container">Products page</main>;
+  return <ProductsPage />;
 }
