@@ -93,6 +93,8 @@ function CartProvider({ children }: { children: React.ReactNode }) {
         const totalPrice = calculateTotalPrice(cartData);
         setProducts(cartData);
         setTotalPrice(totalPrice);
+      } else {
+        resetCart();
       }
     }
   }, [user]);
