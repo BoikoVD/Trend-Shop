@@ -2,6 +2,7 @@
 
 import Image from "next/image";
 import { useState } from "react";
+import { productImageFormatter } from "@/utils/productImageFormatter";
 
 interface IProps {
   images: string[];
@@ -26,7 +27,7 @@ export function Images({ images, className }: IProps) {
                 className={`rounded-xl ${activeImage !== i ? "opacity-[0.5]" : ""}`}
               >
                 <Image
-                  src={image}
+                  src={productImageFormatter(image) ?? "/no_image.png"}
                   alt={`product image ${i}`}
                   width={80}
                   height={80}
@@ -39,7 +40,9 @@ export function Images({ images, className }: IProps) {
       </ul>
       <div className="order-1 lg:order-2 lg:w-[300px] xl:w-[400px]">
         <Image
-          src={imagesData[activeImage]}
+          src={
+            productImageFormatter(imagesData[activeImage]) ?? "/no_image.png"
+          }
           alt={`product image ${activeImage}`}
           width={500}
           height={500}

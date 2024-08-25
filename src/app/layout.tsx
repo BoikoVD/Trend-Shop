@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import ReactQueryProvider from "./_providers/ReactQueryProvider";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { CartProvider } from "@/features/products";
 import "./globals.css";
 
 const inter = Inter({
@@ -30,9 +31,11 @@ export default function RootLayout({
         className={`${inter.className} customScrollBar text-gray-400 dark:bg-gray-500 dark:text-white`}
       >
         <ReactQueryProvider>
-          <Header />
-          {children}
-          <Footer />
+          <CartProvider>
+            <Header />
+            {children}
+            <Footer />
+          </CartProvider>
         </ReactQueryProvider>
       </body>
     </html>

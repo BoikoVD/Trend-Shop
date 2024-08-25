@@ -30,3 +30,8 @@ export type Product = z.infer<typeof schemaProduct>;
 export const schemaProducts = z.array(schemaProduct);
 
 export type Products = z.infer<typeof schemaProducts>;
+
+export type CartItem = {
+  productData: Product;
+  amount: number;
+};

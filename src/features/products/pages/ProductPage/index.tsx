@@ -1,7 +1,7 @@
-import Button from "@/components/UI/Button/Button";
 import { getProduct } from "../../api/api";
 import { Images } from "./parts/Images";
 import { BackButton } from "./parts/BackButton";
+import { AddToCartButton } from "../../components/AddToCartButton";
 
 export async function ProductPage({ id }: { id: string }) {
   const product = await getProduct({ id });
@@ -26,7 +26,7 @@ export async function ProductPage({ id }: { id: string }) {
               <p className="text-xs text-gray-50 sm:text-sm">Price:</p>
               <p className="text-xl sm:text-3xl">{`$ ${product.price}`}</p>
             </div>
-            <Button>Add To Cart</Button>
+            <AddToCartButton product={product} />
           </div>
         </div>
       </div>

@@ -4,5 +4,6 @@ export const routes = {
   PRODUCT: "/product",
   LOGIN: "/login",
   SIGN_UP: "/sign-up",
-  PROFILE: "/profile"
+  PROFILE: "/profile",
+  CART: "/cart"
 };

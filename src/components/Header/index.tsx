@@ -5,6 +5,7 @@ import { CgMenuLeftAlt } from "react-icons/cg";
 import { routes } from "@/constants/routes";
 import { useUser } from "@/features/auth";
 import { UserInfo } from "@/features/auth";
+import { CartButton } from "@/features/products";
 import SwitchThemeButton from "./parts/SwitchThemeButton";
 import AuthButtons from "./parts/AuthButtons";
 import Logo from "./parts/Logo";
@@ -40,8 +41,9 @@ export default function Header() {
             )}
           </div>
         </nav>
-        <div className="flex gap-4">
+        <div className="flex gap-2 sm:gap-4">
           <SwitchThemeButton className="z-50" />
+          {user && <CartButton className="z-50" />}
           <button
             className="z-50 rounded-md border border-gray-300 p-2 dark:bg-gray-500 lg:hidden"
             onClick={() => setIsMenuOpen(prev => !prev)}

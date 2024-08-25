@@ -2,7 +2,7 @@ import { NextRequest, NextResponse } from "next/server";
 import { cookies } from "next/headers";
 import { routes } from "@/constants/routes";
 
-const protectedRoutes = [routes.PROFILE];
+const protectedRoutes = [routes.PROFILE, routes.CART];
 const authorizationRoutes = [routes.LOGIN, routes.SIGN_UP];
 const publicRoutes = [routes.PRODUCTS, routes.HOME];
 
