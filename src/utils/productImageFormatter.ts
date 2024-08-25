@@ -1,8 +1,8 @@
 // The Platzi API is an open source API and the data can be updated by any developer, so we need to make sure that the image URL is in the correct format
 
-export const productImageFormatter = (imageUrl: string): string | null => {
+export const productImageFormatter = (imageUrl: string): string => {
   if (!imageUrl.includes("i.imgur.com")) {
-    return null;
+    return "/no_image.png";
   }
 
   const updatedImageUrl = imageUrl.includes(".jpeg")

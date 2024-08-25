@@ -27,7 +27,7 @@ export function Images({ images, className }: IProps) {
                 className={`rounded-xl ${activeImage !== i ? "opacity-[0.5]" : ""}`}
               >
                 <Image
-                  src={productImageFormatter(image) ?? "/no_image.png"}
+                  src={productImageFormatter(image)}
                   alt={`product image ${i}`}
                   width={80}
                   height={80}
@@ -40,9 +40,7 @@ export function Images({ images, className }: IProps) {
       </ul>
       <div className="order-1 lg:order-2 lg:w-[300px] xl:w-[400px]">
         <Image
-          src={
-            productImageFormatter(imagesData[activeImage]) ?? "/no_image.png"
-          }
+          src={productImageFormatter(imagesData[activeImage])}
           alt={`product image ${activeImage}`}
           width={500}
           height={500}

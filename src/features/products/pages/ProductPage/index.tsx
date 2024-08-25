@@ -11,7 +11,7 @@ export async function ProductPage({ id }: { id: string }) {
       <div className="relative flex w-full flex-col gap-10 rounded-xl border border-gray-300 px-5 pb-10 pt-20 dark:bg-gray-400 sm:px-10 sm:py-20 lg:flex-row">
         <BackButton className="absolute left-5 top-5 sm:left-10" />
         <Images images={product.images} className="" />
-        <div>
+        <div className="flex-[1_1_auto]">
           <h1 className="text-2xl sm:text-3xl">{product.title}</h1>
           <div className="mt-4 flex">
             <div className="flex rounded-full border border-gray-300 bg-white px-3 py-1 text-sm dark:bg-gray-500">

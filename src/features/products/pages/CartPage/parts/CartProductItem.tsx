@@ -17,7 +17,7 @@ export function CartProductItem({ cartItem, removeProduct }: IProps) {
     <li className="flex items-center gap-2 sm:gap-6">
       <Link href={routes.PRODUCT + "/" + cartItem.productData.id}>
         <Image
-          src={imageUrl ?? "/no_image.png"}
+          src={imageUrl}
           alt={`${cartItem.productData.title} image`}
           width={80}
           height={80}

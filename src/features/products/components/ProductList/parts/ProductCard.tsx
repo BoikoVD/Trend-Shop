@@ -19,7 +19,7 @@ export function ProductCard({ productData }: IProps) {
         className="self-center"
       >
         <Image
-          src={imageUrl ?? "/no_image.png"}
+          src={imageUrl}
           alt={`${productData.title} image`}
           width={400}
           height={400}
