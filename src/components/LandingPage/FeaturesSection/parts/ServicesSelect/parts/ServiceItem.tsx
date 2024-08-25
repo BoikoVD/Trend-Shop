@@ -19,7 +19,7 @@ export default function ServiceItem({
 }: IProps) {
   return (
     <div
-      className={`flex cursor-pointer items-center gap-6 rounded border-4 border-purple-400 p-6 transition-all duration-300 ${activeIndex === itemData.id ? "border-purple-400 bg-gray-200 dark:bg-gray-500" : "border-light-100 bg-light-300 dark:border-gray-200 dark:bg-gray-300"}`}
+      className={`flex cursor-pointer items-center gap-6 rounded border-4 p-6 transition-all duration-300 ${activeIndex === itemData.id ? "border-purple-400 bg-gray-200 dark:bg-gray-500" : "border-light-100 bg-light-300 dark:border-gray-200 dark:bg-gray-300"}`}
       tabIndex={0}
       onClick={() => setActiveIndex(itemData.id)}
     >

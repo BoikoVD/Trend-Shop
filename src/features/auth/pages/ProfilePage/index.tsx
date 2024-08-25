@@ -10,7 +10,7 @@ export function ProfilePage() {
   }
 
   return (
-    <main className="container flex flex-col items-center">
+    <main className="container flex min-h-screen flex-col items-center">
       <Image
         src={user.avatar}
         alt="avatar"
