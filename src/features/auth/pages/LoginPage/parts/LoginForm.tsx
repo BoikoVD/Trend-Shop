@@ -62,7 +62,10 @@ export default function LoginForm() {
         })}
         error={errors.password?.message}
       />
-      <Button type="submit" className="min-w-[150px] sm:min-w-[280px]">
+      <Button
+        type="submit"
+        className="min-w-[150px] justify-center sm:min-w-[280px]"
+      >
         Login
       </Button>
     </form>

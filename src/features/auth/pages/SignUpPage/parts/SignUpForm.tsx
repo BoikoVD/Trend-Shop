@@ -100,7 +100,10 @@ export default function LoginForm() {
         })}
         error={errors.confirmPassword?.message}
       />
-      <Button type="submit" className="min-w-[150px] sm:min-w-[280px]">
+      <Button
+        type="submit"
+        className="min-w-[150px] justify-center sm:min-w-[280px]"
+      >
         Sign Up
       </Button>
     </form>
