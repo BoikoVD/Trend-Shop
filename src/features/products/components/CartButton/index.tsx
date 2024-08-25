@@ -20,7 +20,7 @@ export function CartButton({ className }: IProps) {
   return (
     <button
       onClick={() => router.push(routes.CART)}
-      className={`relative rounded-md border border-gray-300 p-2 dark:bg-gray-500 ${className}`}
+      className={`relative rounded-md border border-gray-300 bg-white p-2 dark:bg-gray-500 ${className}`}
     >
       <AiOutlineShoppingCart size={18} />
       {amount > 0 && (
