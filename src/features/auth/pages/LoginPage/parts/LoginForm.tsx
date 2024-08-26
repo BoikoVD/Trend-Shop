@@ -26,7 +26,7 @@ export default function LoginForm() {
   return (
     <form
       onSubmit={handleSubmit(onSubmit)}
-      className="flex flex-col items-center rounded-xl border-2 border-gray-300 px-4 py-4 dark:bg-gray-400 sm:px-20 sm:py-10"
+      className="flex flex-col items-center rounded-xl border-2 border-light-400 px-4 py-4 dark:border-gray-300 dark:bg-gray-400 sm:px-20 sm:py-10"
     >
       <p className="mb-6 text-4xl text-purple-400 sm:mb-10">Login</p>
       <Input

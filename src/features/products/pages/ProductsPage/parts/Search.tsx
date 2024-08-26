@@ -16,7 +16,7 @@ export function Search({ setSearchQuery, className }: IProps) {
 
   return (
     <div
-      className={`relative w-full rounded-xl border border-gray-300 bg-white dark:bg-gray-500 ${className}`}
+      className={`relative w-full rounded-xl border border-light-400 bg-white dark:border-gray-300 dark:bg-gray-500 ${className}`}
     >
       <input
         value={search}

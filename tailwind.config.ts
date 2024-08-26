@@ -27,6 +27,7 @@ const config: Config = {
         "light-100":'#FCFCFC',
         "light-200":'#F7F7F7',
         "light-300":'#F3F3F3',
+        "light-400":'#D4D8D4',
       }
     },
     screens: {

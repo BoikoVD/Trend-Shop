@@ -8,7 +8,7 @@ export async function ProductPage({ id }: { id: string }) {
 
   return (
     <main className="container flex min-h-screen items-center justify-center">
-      <div className="relative flex w-full flex-col gap-10 rounded-xl border border-gray-300 px-5 pb-10 pt-20 dark:bg-gray-400 sm:px-10 sm:py-20 lg:flex-row lg:items-center">
+      <div className="relative flex w-full flex-col gap-10 rounded-xl border border-light-400 px-5 pb-10 pt-20 dark:border-gray-300 dark:bg-gray-400 sm:px-10 sm:py-20 lg:flex-row lg:items-center">
         <BackButton className="absolute left-5 top-5 sm:left-10" />
         <Images images={product.images} className="" />
         <div className="flex-[1_1_auto]">

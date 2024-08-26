@@ -18,7 +18,7 @@ export function Categories({
 }: IProps) {
   return (
     <div
-      className={`rounded-xl border border-gray-300 bg-white py-4 dark:bg-gray-500 md:max-w-[280px] ${className}`}
+      className={`rounded-xl border border-light-400 bg-white py-4 dark:border-gray-300 dark:bg-gray-500 md:max-w-[280px] ${className}`}
     >
       <div className="flex items-center gap-2 pl-2 pr-10">
         <BiCategory size={24} className="text-purple-400" />

@@ -13,7 +13,7 @@ export function ProductCard({ productData }: IProps) {
   const imageUrl = productImageFormatter(productData.images[0]);
 
   return (
-    <div className="flex h-full flex-col rounded-xl border border-gray-300 bg-white p-6 dark:bg-gray-500">
+    <div className="flex h-full flex-col rounded-xl border border-light-400 bg-light-100 p-6 dark:border-gray-300 dark:bg-gray-500">
       <Link
         href={`${routes.PRODUCT}/${productData.id}`}
         className="self-center"
@@ -33,7 +33,7 @@ export function ProductCard({ productData }: IProps) {
           {productData.description}
         </p>
         <div className="mt-4 flex">
-          <div className="flex rounded-full border border-gray-300 bg-white px-3 py-1 dark:bg-gray-500">
+          <div className="flex rounded-full border border-light-400 bg-white px-3 py-1 text-gray-50 dark:border-gray-300 dark:bg-gray-500">
             {productData.category.name}
           </div>
         </div>

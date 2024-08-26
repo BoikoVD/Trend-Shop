@@ -53,7 +53,7 @@ export default function Header() {
           <SwitchThemeButton className="z-50" />
           {user && <CartButton className="z-50" />}
           <button
-            className="z-50 rounded-md border border-gray-300 p-2 dark:bg-gray-500 lg:hidden"
+            className="z-50 rounded-md border border-gray-300 bg-white p-2 dark:bg-gray-500 lg:hidden"
             onClick={() => setIsMenuOpen(prev => !prev)}
           >
             <CgMenuLeftAlt size={18} />
