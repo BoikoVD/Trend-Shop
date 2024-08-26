@@ -6,10 +6,6 @@ navigation and placing orders. This project implements the core functionalities
 essential for e-commerce platforms, including pagination, search by product
 name, category browsing, user authentication, and order placement capabilities.
 
-### Tech Stack:
-
-`JavaScript` `Typescript` `React.js` `Next.js` `React Query` `Tailwind`
-
 ## Getting Started
 
 Follow this section to get the project running on your development machine.
