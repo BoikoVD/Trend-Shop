@@ -2,6 +2,7 @@
 
 import { useEffect } from "react";
 import { useRouter } from "next/navigation";
+import { captureException } from "@sentry/nextjs";
 import { routes } from "@/constants/routes";
 import Button from "@/components/UI/Button/Button";
 
@@ -15,7 +16,7 @@ export default function Error({
   const router = useRouter();
 
   useEffect(() => {
-    console.log("Product page ERROR: ", error);
+    captureException(error);
   }, [error]);
 
   return (
